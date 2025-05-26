@@ -1,4 +1,4 @@
-package Lesson2_4.task_1;
+package lesson2_4.task_1;
 
 public class Animal {
     protected String name;
