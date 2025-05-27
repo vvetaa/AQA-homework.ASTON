@@ -1,8 +1,11 @@
 package lesson2_4.task_1;
 
 public class Cat extends Animal {
+    public static int countCat;
+    public String isFed;
     public Cat (String name) {
-        this.name = name;
+        super(name);
+        countCat++;
     }
 
     @Override
@@ -17,5 +20,9 @@ public class Cat extends Animal {
     @Override
     public void swim(int meters) {
         System.out.println(name + " не умеет плавать.");
+    }
+
+    public static void ptrintCountCat(){
+        System.out.println("Котов: " + countCat);
     }
 }

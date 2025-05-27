@@ -1,8 +1,10 @@
 package lesson2_4.task_1;
 
 public class Dog extends Animal {
+    public static int countDog;
     public Dog (String name) {
-        this.name = name;
+        super(name);
+        countDog++;
     }
 
     @Override
@@ -21,5 +23,9 @@ public class Dog extends Animal {
         } else {
             System.out.println(name + " не может проплыть " + meters + " м.");
         }
+    }
+
+    public static void ptrintCountDog(){
+        System.out.println("Собак : " + countDog);
     }
 }

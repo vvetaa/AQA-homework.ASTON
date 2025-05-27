@@ -1,11 +1,12 @@
 package lesson2_4.task_1;
 
 public class Animal {
-    protected String name;
-    public Animal () {
-    };
+    public final String name;
+    public static int countAnimal;
+
     public Animal (String name) {
         this.name = name;
+        countAnimal++;
     }
 
     public void run(int meters) {
@@ -14,5 +15,9 @@ public class Animal {
 
     public void swim(int meters) {
         System.out.println(name + " проплыл " + meters + " м.");
+    }
+
+    public static void printCountAnimal() {
+        System.out.println("Колличество записанных животных: " + countAnimal);
     }
 }
