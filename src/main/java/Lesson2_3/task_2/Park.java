@@ -1,10 +1,10 @@
-package Lesson2_3;
+package Lesson2_3.task_2;
 
 public class Park {
     public class Attraction {
-        private String attractionName;
-        private String workingHours;
-        private int price;
+        private final String attractionName;
+        private final String workingHours;
+        private final int price;
 
         public Attraction(String attractionName, String workingHours, int price) {
             this.attractionName = attractionName;
