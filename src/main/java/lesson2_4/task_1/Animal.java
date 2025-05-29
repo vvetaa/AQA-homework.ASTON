@@ -17,7 +17,7 @@ public class Animal {
         System.out.println(name + " проплыл " + meters + " м.");
     }
 
-    public static void printCountAnimal() {
+    public static void getCountAnimal() {
         System.out.println("Колличество записанных животных: " + countAnimal);
     }
 }

@@ -9,23 +9,25 @@ public class Dog extends Animal {
 
     @Override
     public void run(int meters) {
-        if (meters < 500) {
+        int limit = 500;
+        if (meters <= limit) {
             System.out.println(name + " пробежал " + meters + " м.");
         } else {
-            System.out.println(name + " не может пробежать " + meters + " м.");
+            System.out.println(name + " не может пробежать больше чем " + limit + " м.");
         }
     }
 
     @Override
     public void swim(int meters) {
-        if (meters < 10) {
+        int limit = 10;
+        if (meters <= limit) {
             System.out.println(name + " проплыл " + meters + " м.");
         } else {
-            System.out.println(name + " не может проплыть " + meters + " м.");
+            System.out.println(name + " не может проплыть больше чем " + limit + " м.");
         }
     }
 
-    public static void ptrintCountDog(){
+    public static void getCountDog(){
         System.out.println("Собак : " + countDog);
     }
 }

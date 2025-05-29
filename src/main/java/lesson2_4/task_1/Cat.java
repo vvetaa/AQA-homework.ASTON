@@ -2,18 +2,21 @@ package lesson2_4.task_1;
 
 public class Cat extends Animal {
     public static int countCat;
-    public String isFed;
+    public boolean isFed = false;
+
     public Cat (String name) {
         super(name);
+       // this.isFed = false;
         countCat++;
     }
 
     @Override
     public void run(int meters) {
-        if (meters < 200) {
+        int limit = 200;
+        if (meters < limit) {
             System.out.println(name + " пробежал " + meters + " м.");
         } else {
-            System.out.println(name + " не может пробежать " + meters + " м.");
+            System.out.println(name + " не может пробежать больше чем " + limit + " м.");
         }
     }
 
@@ -22,7 +25,17 @@ public class Cat extends Animal {
         System.out.println(name + " не умеет плавать.");
     }
 
-    public static void ptrintCountCat(){
+    public static void getCountCat(){
         System.out.println("Котов: " + countCat);
+    }
+
+    public void eat(Bowl bowl, int food) {
+        if (bowl.getFoodAmount() < food) {
+            System.out.println(name + " хочет больше еды в миске.");
+        } else {
+            bowl.reduceFood(food);
+            isFed = true;
+            System.out.println(name + " покушал и больше не голоден.");
+        }
     }
 }
