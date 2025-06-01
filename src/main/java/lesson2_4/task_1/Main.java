@@ -6,9 +6,9 @@ public class Main {
         Dog dog1 = new Dog("Шарик");
         Dog dog2 = new Dog("Барбос");
 
-        Animal.getCountAnimal();
-        Cat.getCountCat();
-        Dog.getCountDog();
+        System.out.println("Колличество записанных животных: " + Animal.countAnimal);
+        System.out.println("Котов: " + Cat.countCat);
+        System.out.println("Собак: " + Dog.countDog);
 
         cat1.run(10);
         dog1.swim(3);

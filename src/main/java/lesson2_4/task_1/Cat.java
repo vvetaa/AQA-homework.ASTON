@@ -24,10 +24,6 @@ public class Cat extends Animal {
         System.out.println(name + " не умеет плавать.");
     }
 
-    public static void getCountCat(){
-        System.out.println("Котов: " + countCat);
-    }
-
     public void eat(Bowl bowl, int food) {
         if (bowl.getFoodAmount() < food) {
             System.out.println(name + " хочет больше еды в миске.");

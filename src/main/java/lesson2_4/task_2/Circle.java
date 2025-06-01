@@ -1,6 +1,6 @@
 package lesson2_4.task_2;
 
-public class Circle extends Color{
+public class Circle extends Shape {
     private final double radius;
 
     public Circle(double radius, String fillColor, String borderColor) {

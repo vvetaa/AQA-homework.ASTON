@@ -1,6 +1,6 @@
 package lesson2_4.task_2;
 
-public class Triangle extends Color{
+public class Triangle extends Shape {
     private final double a;
     private final double b;
     private final double c;
