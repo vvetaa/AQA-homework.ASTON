@@ -6,7 +6,7 @@ public class Main {
         Dog dog1 = new Dog("Шарик");
         Dog dog2 = new Dog("Барбос");
 
-        System.out.println("Колличество записанных животных: " + Animal.countAnimal);
+        System.out.println("Количество записанных животных: " + Animal.countAnimal);
         System.out.println("Котов: " + Cat.countCat);
         System.out.println("Собак: " + Dog.countDog);
 

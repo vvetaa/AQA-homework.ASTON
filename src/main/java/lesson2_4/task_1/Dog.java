@@ -26,8 +26,4 @@ public class Dog extends Animal {
             System.out.println(name + " не может проплыть больше чем " + limit + " м.");
         }
     }
-
-    public static void getCountDog(){
-        System.out.println("Собак : " + countDog);
-    }
 }
