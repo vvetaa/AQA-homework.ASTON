@@ -1,4 +1,4 @@
-package Lesson2_3.task_2;
+package lesson2_3.task_2;
 
 public class Park {
     public class Attraction {
