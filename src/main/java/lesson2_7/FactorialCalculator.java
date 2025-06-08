@@ -11,5 +11,3 @@ public class FactorialCalculator {
         return f;
     }
 }
-
-//  позволяющую вычислить факториал числа;

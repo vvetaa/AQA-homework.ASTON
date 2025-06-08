@@ -13,5 +13,3 @@ public class TriangleAreaCalculator {
         return Math.sqrt(p2 * (p2 - a) * (p2 - b) * (p2 - c));
     }
 }
-
-//  позволяющую найти площадь треугольника;

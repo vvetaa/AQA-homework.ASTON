@@ -11,5 +11,3 @@ public class NumberComparator {
         }
     }
 }
-
-//  сравнивающую два целых числа.

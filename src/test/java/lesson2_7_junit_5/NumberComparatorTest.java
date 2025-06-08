@@ -20,5 +20,4 @@ public class NumberComparatorTest {
     void numberComparator_ValidInput(int a, int b, String expected) {
         assertEquals(expected, NumberComparator.numberComparator(a, b));
     }
-
 }
