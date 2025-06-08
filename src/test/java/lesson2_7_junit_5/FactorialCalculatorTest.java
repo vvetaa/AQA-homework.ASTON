@@ -26,8 +26,6 @@ public class FactorialCalculatorTest {
     @DisplayName("Исключение для факториала отрицательного числа")
     @Test
     void factorialCalculator_NegativeInput() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            FactorialCalculator.factorialCalculator(-1);
-        });
+        assertThrows(IllegalArgumentException.class, () -> FactorialCalculator.factorialCalculator(-1));
     }
 }

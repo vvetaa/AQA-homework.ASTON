@@ -25,16 +25,12 @@ public class TriangleAreaCalculatorTest {
     @DisplayName("Исключение при отрицательном числе")
     @Test
     void triangleAreaCalculator_NegativeInput() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            TriangleAreaCalculator.triangleAreaCalculator(5, -5, 6);
-        });
+        assertThrows(IllegalArgumentException.class, () -> TriangleAreaCalculator.triangleAreaCalculator(5, -5, 6));
     }
 
     @DisplayName("Исключение при нарушении неравенства треугольника")
     @Test
     void triangleAreaCalculator_TriangleInequalityViolated() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            TriangleAreaCalculator.triangleAreaCalculator(4, 10, 6);
-        });
+        assertThrows(IllegalArgumentException.class, () -> TriangleAreaCalculator.triangleAreaCalculator(4, 10, 6));
     }
 }

@@ -27,8 +27,6 @@ public class CalculatorTest {
     @DisplayName("Исключение при несуществующей операции")
     @Test
     void calculator_NegativeInput() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            Calculator.calculator(5, 5, "разложить");
-        });
+        assertThrows(IllegalArgumentException.class, () -> Calculator.calculator(5, 5, "разложить"));
     }
 }
