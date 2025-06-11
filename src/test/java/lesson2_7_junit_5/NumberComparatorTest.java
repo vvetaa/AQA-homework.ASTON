@@ -18,6 +18,8 @@ public class NumberComparatorTest {
             "-4, 0, меньше",
     })
     void numberComparator_ValidInput(int a, int b, String expected) {
-        assertEquals(expected, NumberComparator.numberComparator(a, b));
+        NumberComparator comparator = new NumberComparator();
+        String result = comparator.numberComparator(a, b);
+        assertEquals(expected, result);
     }
 }

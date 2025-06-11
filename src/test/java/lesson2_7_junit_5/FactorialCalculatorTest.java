@@ -20,12 +20,15 @@ public class FactorialCalculatorTest {
             "5, 120",
     })
     void factorialCalculator_ValidInput(int input, int expected) {
-        assertEquals(expected, FactorialCalculator.factorialCalculator(input));
+        FactorialCalculator factorial = new FactorialCalculator();
+        int result = factorial.factorialCalculator(input);
+        assertEquals(expected, result);
     }
 
     @DisplayName("Исключение для факториала отрицательного числа")
     @Test
     void factorialCalculator_NegativeInput() {
-        assertThrows(IllegalArgumentException.class, () -> FactorialCalculator.factorialCalculator(-1));
+        FactorialCalculator factorial = new FactorialCalculator();
+        assertThrows(IllegalArgumentException.class, () -> factorial.factorialCalculator(-1));
     }
 }

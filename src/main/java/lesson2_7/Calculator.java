@@ -1,18 +1,23 @@
 package lesson2_7;
 
 public class Calculator {
-    public static int calculator(int a, int b, String operation) {
-        switch (operation) {
-            case "сложение":
-                return a + b;
-            case "вычитание":
-                return a - b;
-            case "умножение":
-                return a * b;
-            case "деление":
-                return a / b;
-            default:
-                throw new IllegalArgumentException("Неизвестная операция: \"" + operation + "\". Ожидаемые операции: сложение, вычитание, умножение, деление");
+
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public double divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Деление на ноль запрещено!");
         }
+        return (double) a / b;
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
     }
 }

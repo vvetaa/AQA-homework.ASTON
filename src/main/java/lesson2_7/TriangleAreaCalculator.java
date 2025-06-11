@@ -1,7 +1,8 @@
 package lesson2_7;
 
 public class TriangleAreaCalculator {
-    public static double triangleAreaCalculator(double a, double b, double c) {
+
+    public double triangleAreaCalculator(double a, double b, double c) {
         if (a <= 0 || b <= 0 || c <= 0) {
             throw new IllegalArgumentException("Стороны треугольника должны быть положительными числами");
         }
