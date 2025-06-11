@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-@Test(description = "Сравнение двух целых чисел")
 public class NumberComparatorTest {
 
     @DataProvider(name = "comparisonData")
@@ -14,14 +13,14 @@ public class NumberComparatorTest {
         return new Object[][]{
                 {5, 5, "равно"},
                 {10, 3, "больше"},
-                {-4, 0, "меньше"},
+                {-4, 0, "меньше"}
         };
     }
 
-    @Test(dataProvider = "comparisonData",
-            testName = "Валидные значения"
-    )
+    @Test(dataProvider = "comparisonData", testName = "Валидные значения")
     void numberComparator_ValidInput(int a, int b, String expected) {
-        assertEquals(NumberComparator.numberComparator(a, b), expected);
+        NumberComparator comparator = new NumberComparator();
+        String result = comparator.numberComparator(a, b);
+        assertEquals(result, expected);
     }
 }
