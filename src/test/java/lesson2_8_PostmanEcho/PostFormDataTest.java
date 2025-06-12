@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class Post_RawTextTest {
+public class PostFormDataTest {
 
     @Test
     public void post_thenStatus200() {
         given()
                 .baseUri("https://postman-echo.com")
-                .contentType("application/json")
-                .body("{\n" +
-                        "    \"test\": \"Hello\"\n" +
-                        "}")
+                .contentType("application/x-www-form-urlencoded; charset=utf-8")
+                .formParam("foo1", "bar1")
+                .formParam("foo2", "bar2")
                 .when()
                 .post("/post")
                 .then().log().body()
                 .statusCode(200)
                 .and()
-                .body("data.test", equalTo("Hello"));
+                .body("form.foo1", equalTo("bar1"))
+                .body("form.foo2", equalTo("bar2"));
     }
 }
