@@ -46,7 +46,7 @@ public class MtsByTest {
     @Test
     @DisplayName("Проверка названия блока 'Онлайн пополнение без комиссии'")
     void testBlockTitle() {
-        WebElement blockTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//section[@class='pay']//h2")));
+        WebElement blockTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(), 'Онлайн пополнение')]")));
         String expectedTitle = "Онлайн пополнение\nбез комиссии";
         String actualTitle = blockTitle.getText();
         assertEquals(expectedTitle, actualTitle, "Название блока не соответствует ожидаемому");
@@ -62,7 +62,7 @@ public class MtsByTest {
     @Test
     @DisplayName("Проверка работы ссылки 'Подробнее о сервисе'")
     void testLink() {
-        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='pay__wrapper']//a")));
+        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Подробнее о сервисе")));
         link.click();
         String correctLink = "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
         assertTrue(driver.getCurrentUrl().contains(correctLink), "Открыт неверный URL");
@@ -72,14 +72,13 @@ public class MtsByTest {
     @DisplayName("Проверка формы пополнения, вариант - 'Услуги связи'")
     void testButton() {
         WebElement phoneNumber = driver.findElement(By.xpath("//input[@placeholder='Номер телефона']"));
+        WebElement amount = driver.findElement(By.xpath("//input[@placeholder='Сумма']"));
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//form[@id='pay-connection']/button")));
+
         phoneNumber.click();
         phoneNumber.sendKeys("297777777");
-
-        WebElement amount = driver.findElement(By.xpath("//input[@placeholder='Сумма']"));
         amount.click();
         amount.sendKeys("50");
-
-        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//form[@id='pay-connection']/button")));
         button.click();
 
         WebElement paymentForm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='bepaid-iframe']")));
